@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/misko9251/planner/issues"
   },
-  "homepage": "https://github.com/misko9251/planner#readme"
+  "homepage": "https://github.com/misko9251/planner#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
