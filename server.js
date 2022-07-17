@@ -3,12 +3,13 @@ const app = express();
 const mongoose = require('mongoose');
 const homeRoute = require('./routes/home');
 
-require('dotenv').config({path: './config/.env'})
+require('dotenv').config({path: './config/.env'});
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 app.use('/', homeRoute);
 
 app.listen(process.env.PORT, ()=>{
-    console.log(`Running on Port ${process.env.PORT}`)
+    console.log(`Running on Port ${process.env.PORT}`);
 })  

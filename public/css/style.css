@@ -1,0 +1,58 @@
+body{
+    background-image: url("/photos/calm.jpg");
+    background-size: cover;
+}
+
+.mainHomePageContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    height: 100vh;
+}
+
+.infoBoxHomePage{
+    height: 75vh;
+    width: 60%;
+    background-color: rgba(35, 65, 75, .85);
+    border-radius: 5%;
+}
+
+.infoBoxHomePage > h1{
+    color: white;
+    font-size: 64px;
+    text-align: center;
+    font-family: 'Edu TAS Beginner', cursive;
+    margin-bottom: 0;
+}
+
+.infoBoxHomePage > p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    padding: 5%;
+}
+
+.mainPageButton{
+    background-color:rgb(216, 196, 188);
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.mainPageButton:hover{
+    background-color:rgb(236, 181, 157);
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    font-family: 'Titillium Web', sans-serif;
+    cursor: pointer;
+}
+
+.buttonWrapper{
+    display: flex;
+    justify-content: center;
+}
