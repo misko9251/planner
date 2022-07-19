@@ -1,4 +1,4 @@
-const Todo = require('../models/todomovies');
+const movies = require('../models/todomovies');
 
 module.exports = {
     getTodos: (request, response) => {
@@ -6,7 +6,8 @@ module.exports = {
     },
     addMovie: async (request, response) => {
          try {
-             await Todo.create({title: request.body.title})
+             await movies.create({title: request.body.movie})
+             response.redirect('/todos')
          } catch (error) {
              console.log(error)
          }
