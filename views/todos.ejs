@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>To Do Lists</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap" rel="stylesheet">
@@ -13,14 +13,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "css/style.css">
 </head>
-<body class="homePageBody">
-    <section class="mainHomePageContainer">
-        <section class="infoBoxHomePage">
-            <h1>Stay Structured</h1>
-            <p>We provide you with everything you need to stay on track and knock out your tasks, helping you find that extra time for you and your family.</p>
-            <div class="buttonWrapper">
-                <a class="anchorButton" href="/todos"><button class="mainPageButton">GET STARTED</button></a>
-            </div>
+<body>
+    <section class="listPageContainer">
+        <nav>
+            <h2>Stay Structured</h2>
+            <ul>
+                <li>Movies to Watch</li>
+                <li>Groceries</li>
+                <li>Places to Eat</li>
+                <li>Chores</li>
+            </ul>
+        </nav>
+        <section class="rightContainerList">
+            <h1>Movies to Watch</h1>
+            <form action="/createMovie" method='POST'>
+                <input type="text" placeholder="Enter Movie to Watch" name='movie'>
+                <input type="submit">
+            </form>
+            <!-- <section class="listedThingsToDo">
+                <h3>Testing</h3>
+            </section> -->
         </section>
     </section>
 </body>
