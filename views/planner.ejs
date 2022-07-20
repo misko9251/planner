@@ -27,16 +27,17 @@
         </nav>
         <section class="rightContainerList">
             <h1>Movies to Watch</h1>
-            <form action="/todos/createMovie" method='POST'>
+            <form action="/planner/createMovie" method='POST'>
                 <input type="text" placeholder="Enter Movie to Watch" name='movie'>
                 <input type="submit">
             </form>
                 <% movieList.forEach( item => { %>
-                    <section class="listedThingsToDo">
-                            <h3><%= item.title %></h3><i class="fa-solid fa-circle-minus"></i>
+                    <section class="listedThingsToDo" data-id="<%=item._id%>">
+                            <h3><%= item.title %></h3><i class="deleteMovie fa-solid fa-circle-minus"></i>
                     </section>
                 <% }) %>    
         </section>
     </section>
+    <script src="js/main.js"></script>
 </body>
 </html>
