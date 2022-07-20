@@ -33,6 +33,11 @@
             <!-- <section class="listedThingsToDo">
                 <h3>Testing</h3>
             </section> -->
+                <% movieList.forEach( el => { %>
+                    <section class="listedThingsToDo">
+                            <h3><%= el.title %></h3>
+                    </section>
+                <% }) %>    
         </section>
     </section>
 </body>

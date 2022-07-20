@@ -1,8 +1,10 @@
 const movies = require('../models/todomovies');
 
 module.exports = {
-    getTodos: (request, response) => {
-        response.render('todos.ejs');
+    getTodos: async (request, response) => {
+        const moviesToWatch = await movies.find()
+        response.render('todos.ejs', {movieList: moviesToWatch});
+        console.log(moviesToWatch)
     },
     addMovie: async (request, response) => {
          try {
