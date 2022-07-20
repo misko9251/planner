@@ -149,7 +149,21 @@ ul{
 .listedThingsToDo{
     background-color: white;
     border-radius: 5px;
-    height: 7%;
     margin: 3% 0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3%;
+}
+
+.listedThingsToDo > h3{
+    padding: 1%;
+    align-self: flex-start;
+}
+
+i{
+    color: rgb(190, 81, 81);
+    cursor: pointer;
+    display: block;
+    align-self: center;
 }
 

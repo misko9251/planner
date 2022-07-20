@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c3a68ff822.js" crossorigin="anonymous"></script>
     <link rel = "stylesheet" href = "css/style.css">
 </head>
 <body>
@@ -30,12 +31,9 @@
                 <input type="text" placeholder="Enter Movie to Watch" name='movie'>
                 <input type="submit">
             </form>
-            <!-- <section class="listedThingsToDo">
-                <h3>Testing</h3>
-            </section> -->
-                <% movieList.forEach( el => { %>
+                <% movieList.forEach( item => { %>
                     <section class="listedThingsToDo">
-                            <h3><%= el.title %></h3>
+                            <h3><%= item.title %></h3><i class="fa-solid fa-circle-minus"></i>
                     </section>
                 <% }) %>    
         </section>
