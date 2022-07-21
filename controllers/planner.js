@@ -32,5 +32,16 @@ module.exports = {
         } catch (error) {
             console.log('Error')
         }
+    },
+    movieNotWatched: async (request, response) => {
+        try {
+            await movies.findOneAndUpdate({_id: request.body.movieIdFromMongo},{
+                completed: false
+            })
+            console.log('Movie not watched')
+            response.json('OK')
+        } catch (error) {
+            console.log('Error')
+        }
     }
 }
