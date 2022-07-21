@@ -33,7 +33,7 @@
             </form>
                 <% movieList.forEach( item => { %>
                     <section class="listedThingsToDo" data-id="<%=item._id%>">
-                            <h3><%= item.title %></h3><i class="deleteMovie fa-solid fa-circle-minus"></i>
+                        <i class='<%= item.completed === false ? 'completeCircle fa-solid fa-circle' : 'checkedCompleteCircle fa-solid fa-circle-dot'%>'></i><h3><%= item.title %></h3><i class="deleteMovie fa-solid fa-circle-minus"></i>
                     </section>
                 <% }) %>    
         </section>

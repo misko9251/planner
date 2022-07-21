@@ -151,8 +151,9 @@ ul{
     border-radius: 5px;
     margin: 3% 0;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-right: 3%;
+    padding-left: 3%;
 }
 
 .listedThingsToDo > h3{
@@ -160,10 +161,24 @@ ul{
     align-self: flex-start;
 }
 
-i{
+.deleteMovie{
     color: rgb(190, 81, 81);
     cursor: pointer;
     display: block;
     align-self: center;
+    margin-left: auto;
 }
 
+.completeCircle{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(35, 65, 75, .85);
+}
+
+.checkedCompleteCircle{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(35, 65, 75, .85);
+}

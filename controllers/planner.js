@@ -7,20 +7,30 @@ module.exports = {
     },
     addMovie: async (request, response) => {
          try {
-             await movies.create({title: request.body.movie})
+             await movies.create({title: request.body.movie, completed: false})
              response.redirect('/planner')
          } catch (error) {
              console.log(error)
          }
     },
     deleteMovie: async (request, response) =>{
-        console.log(request.body.movieIdFromMongo)
         try {
             await movies.findOneAndDelete({_id: request.body.movieIdFromMongo})
             console.log('Deleted movie from collection')
             response.json('OK')
         } catch (error) {
-            console.log(error)
+            console.log(error);
+        }
+    },
+    movieWatched: async (request, response) => {
+        try {
+            await movies.findOneAndUpdate({_id: request.body.movieIdFromMongo},{
+                completed: true
+            })
+            console.log('Movie watched')
+            response.json('OK')
+        } catch (error) {
+            console.log('Error')
         }
     }
 }

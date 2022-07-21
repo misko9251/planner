@@ -7,8 +7,12 @@ const TodoSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
+    completed: {
+        type: Boolean,
+        required: true,
+      }
 })
 
 module.exports = mongoose.model('movies', TodoSchema);
