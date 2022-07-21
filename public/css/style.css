@@ -140,7 +140,20 @@ ul{
     padding-top: 5%;
 }
 
+.rightContainerListGroceries{
+    width: 70%;
+    background-color: rgba(228, 153, 238, 0.85);
+    padding: 0 20px;
+    padding-top: 5%;
+}
+
 .rightContainerList > h1{
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.rightContainerListGroceries > h1{
     font-family: 'Edu TAS Beginner', cursive;
     font-size: 40px;
     color: white;
@@ -161,7 +174,7 @@ ul{
     align-self: flex-start;
 }
 
-.deleteMovie{
+.deleteMovie, .deleteGrocery{
     color: rgb(190, 81, 81);
     cursor: pointer;
     display: block;
@@ -181,4 +194,18 @@ ul{
     display: block;
     align-self: center;
     color: rgba(35, 65, 75, .85);
+}
+
+.completeCircle2{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(209, 104, 223, 0.85);
+}
+
+.checkedCompleteCircle2{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(209, 104, 223, 0.85);
 }

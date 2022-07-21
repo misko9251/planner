@@ -25,17 +25,17 @@
                 <li>Chores</li>
             </ul>
         </nav>
-        <section class="rightContainerList">
-            <h1>Movies to Watch</h1>
-            <form action="/planner/createMovie" method='POST'>
-                <input type="text" placeholder="Enter Movie to Watch" name='movie'>
+        <section class="rightContainerListGroceries">
+            <h1>Grocery List</h1>
+            <form action="/groceries/insertGrocery" method='POST'>
+                <input type="text" placeholder="Enter Grocery Item" name='grocery'>
                 <input type="submit">
             </form>
-                <% movieList.forEach( item => { %>
-                    <section class="listedThingsToDo" data-id="<%=item._id%>">
-                        <i class='<%= item.completed === false ? 'completeCircle fa-solid fa-circle' : 'checkedCompleteCircle fa-solid fa-circle-dot'%>'></i><h3><%= item.title %></h3><i class="deleteMovie fa-solid fa-circle-minus"></i>
-                    </section>
-                <% }) %>    
+            <% groceriesNeeded.forEach( item => { %>
+                <section class="listedThingsToDo" data-id="<%=item._id%>">
+                    <i class='<%= item.completed === false ? 'completeCircle2 fa-solid fa-circle' : 'checkedCompleteCircle2 fa-solid fa-circle-dot'%>'></i><h3><%= item.groceryItem %></h3><i class="deleteGrocery fa-solid fa-circle-minus"></i>
+                </section>
+            <% }) %>    
         </section>
     </section>
     <script src="js/main.js"></script>
