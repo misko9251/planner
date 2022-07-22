@@ -147,6 +147,13 @@ ul{
     padding-top: 5%;
 }
 
+.rightContainerListEat{
+    width: 70%;
+    background-color: rgba(43, 117, 49, 0.85);
+    padding: 0 20px;
+    padding-top: 5%;
+}
+
 .rightContainerList > h1{
     font-family: 'Edu TAS Beginner', cursive;
     font-size: 40px;
@@ -154,6 +161,12 @@ ul{
 }
 
 .rightContainerListGroceries > h1{
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.rightContainerListEat > h1{
     font-family: 'Edu TAS Beginner', cursive;
     font-size: 40px;
     color: white;
@@ -208,4 +221,18 @@ ul{
     display: block;
     align-self: center;
     color: rgba(209, 104, 223, 0.85);
+}
+
+.completeCircle3{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(88, 182, 96, 0.85);
+}
+
+.checkedCompleteCircle3{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(88, 182, 96, 0.85);
 }

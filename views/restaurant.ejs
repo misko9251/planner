@@ -25,17 +25,17 @@
                 <a href="/chores"><li>Chores</li></a>
             </ul>
         </nav>
-        <section class="rightContainerListGroceries">
-            <h1>Grocery List</h1>
-            <form action="/groceries/insertGrocery" method='POST'>
-                <input type="text" placeholder="Enter Grocery Item" name='grocery'>
+        <section class="rightContainerListEat">
+            <h1>Places to Eat</h1>
+            <form action="/restaurant/insertRestaurant" method='POST'>
+                <input type="text" placeholder="Enter Restaurant Name" name='restaurant'>
                 <input type="submit">
             </form>
-            <% groceriesNeeded.forEach( item => { %>
+            <% restaurantList.forEach( item => { %>
                 <section class="listedThingsToDo" data-id="<%=item._id%>">
-                    <i class='<%= item.completed === false ? 'completeCircle2 fa-solid fa-circle' : 'checkedCompleteCircle2 fa-solid fa-circle-dot'%>'></i><h3><%= item.groceryItem %></h3><i class="deleteGrocery fa-solid fa-circle-minus"></i>
+                    <i class='<%= item.completed === false ? 'completeCircle3 fa-solid fa-circle' : 'checkedCompleteCircle3 fa-solid fa-circle-dot'%>'></i><h3><%= item.restaurantName %></h3><i class="deleteGrocery fa-solid fa-circle-minus"></i>
                 </section>
-            <% }) %>    
+            <% }) %>   
         </section>
     </section>
     <script src="js/main.js"></script>

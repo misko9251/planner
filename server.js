@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const homeRoute = require('./routes/home');
 const toDoRoutes = require('./routes/planner');
 const toShopRoutes = require('./routes/groceries')
+const toEatRoutes = require('./routes/restaurant')
 const connectDB = require('./config/database');
 
 require('dotenv').config({path: './config/.env'});
@@ -18,6 +19,7 @@ app.use(express.json())
 app.use('/', homeRoute);
 app.use('/planner', toDoRoutes)
 app.use('/groceries', toShopRoutes)
+app.use('/restaurant', toEatRoutes)
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Running on Port ${process.env.PORT}`);
