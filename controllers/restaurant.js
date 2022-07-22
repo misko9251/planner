@@ -39,7 +39,7 @@ module.exports = {
         try {
             await restaurants.findOneAndDelete({_id: request.body.restaurantIdFromMongo});
             console.log('Rest deleted')
-            response.json('OK')
+            response.json('Got it')
         } catch (error) {
             console.log(error)
         }
