@@ -21,5 +21,16 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    groceryAcquired: async (request, response)=> {
+        try {
+            await groceries.findOneAndUpdate({_id: request.body.groceryIdFromMongo}, {
+                completed: true
+            })
+            console.log('Grocery acquired')
+            response.json('OK')
+        } catch (error) {
+            console.log(error)
+        }
     }
 }   
