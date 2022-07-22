@@ -33,7 +33,7 @@
             </form>
             <% restaurantList.forEach( item => { %>
                 <section class="listedThingsToDo" data-id="<%=item._id%>">
-                    <i class='<%= item.completed === false ? 'completeCircle3 fa-solid fa-circle' : 'checkedCompleteCircle3 fa-solid fa-circle-dot'%>'></i><h3><%= item.restaurantName %></h3><i class="deleteGrocery fa-solid fa-circle-minus"></i>
+                    <i class='<%= item.completed === false ? 'completeCircle3 fa-solid fa-circle' : 'checkedCompleteCircle3 fa-solid fa-circle-dot'%>'></i><h3><%= item.restaurantName %></h3><i class="deleteRestaurant fa-solid fa-circle-minus"></i>
                 </section>
             <% }) %>   
         </section>

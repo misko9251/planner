@@ -187,7 +187,7 @@ ul{
     align-self: flex-start;
 }
 
-.deleteMovie, .deleteGrocery{
+.deleteMovie, .deleteGrocery, .deleteRestaurant{
     color: rgb(190, 81, 81);
     cursor: pointer;
     display: block;

@@ -4,6 +4,9 @@ const markMovieNotWatched = document.querySelectorAll('.checkedCompleteCircle');
 const deleteGroceryBtn = document.querySelectorAll('.deleteGrocery');
 const markGroceryCompleted = document.querySelectorAll('.completeCircle2');
 const markGroceryIncomplete = document.querySelectorAll('.checkedCompleteCircle2');
+const markRestCompleted = document.querySelectorAll('.completeCircle3');
+const markRestIncomplete = document.querySelectorAll('.checkedCompleteCircle3');
+const deleteRest = document.querySelectorAll('.deleteRestaurant');
 
 Array.from(deleteMovieBtn).forEach((item)=>{
     item.addEventListener('click', deleteMovie);
@@ -27,6 +30,18 @@ Array.from(markGroceryCompleted).forEach((item)=>{
 
 Array.from(markGroceryIncomplete).forEach((item)=>{
     item.addEventListener('click', groceryStillNeeded);
+})
+
+Array.from(markRestCompleted).forEach((item)=>{
+    item.addEventListener('click', restaurantVisited);
+})
+
+Array.from(markRestIncomplete).forEach((item)=>{
+    item.addEventListener('click', restaurantNotVisited);
+})
+
+Array.from(deleteRest).forEach((item)=>{
+    item.addEventListener('click', removeRest);
 })
 
 async function deleteMovie() {
@@ -127,6 +142,60 @@ async function groceryStillNeeded(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'groceryIdFromMongo': groceryId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function restaurantVisited(){
+    const restaurantId = this.parentNode.dataset.id
+    try {
+        const response = await fetch('restaurant/restaurantVisited', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'restaurantIdFromMongo': restaurantId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function restaurantNotVisited(){
+    const restaurantId = this.parentNode.dataset.id
+    try {
+        const response = await fetch('restaurant/restaurantNotVisited', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'restaurantIdFromMongo': restaurantId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function removeRest(){
+    const restaurantId = this.parentNode.dataset.id
+    try {
+        const response = await fetch('restaurant/removeRest', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'restaurantIdFromMongo': restaurantId
             })
         })
         const data = await response.json()

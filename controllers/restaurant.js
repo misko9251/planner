@@ -12,5 +12,36 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
+    },
+    restaurantVisited: async (request, response)=>{
+        try {
+            await restaurants.findOneAndUpdate({_id: request.body.restaurantIdFromMongo}, {
+                completed: true
+            })
+            console.log('We visited')
+            response.json('OK')
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    restaurantNotVisited: async (request, response)=>{
+        try {
+            await restaurants.findOneAndUpdate({_id: request.body.restaurantIdFromMongo},{
+                completed: false
+            })
+            console.log('We need to visit still')
+            response.json('OK')
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    removeRest: async (request, response)=>{
+        try {
+            await restaurants.findOneAndDelete({_id: request.body.restaurantIdFromMongo});
+            console.log('Rest deleted')
+            response.json('OK')
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
