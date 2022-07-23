@@ -7,6 +7,9 @@ const markGroceryIncomplete = document.querySelectorAll('.checkedCompleteCircle2
 const markRestCompleted = document.querySelectorAll('.completeCircle3');
 const markRestIncomplete = document.querySelectorAll('.checkedCompleteCircle3');
 const deleteRest = document.querySelectorAll('.deleteRestaurant');
+const deleteChores = document.querySelectorAll('.deleteChore');
+const choreCompleted = document.querySelectorAll('.completeCircle4');
+const choreIncomplete = document.querySelectorAll('.checkedCompleteCircle4');
 
 Array.from(deleteMovieBtn).forEach((item)=>{
     item.addEventListener('click', deleteMovie);
@@ -42,6 +45,18 @@ Array.from(markRestIncomplete).forEach((item)=>{
 
 Array.from(deleteRest).forEach((item)=>{
     item.addEventListener('click', removeRest);
+})
+
+Array.from(deleteChores).forEach((item)=>{
+    item.addEventListener('click', deleteChore)
+})
+
+Array.from(choreCompleted).forEach((item)=>{
+    item.addEventListener('click', choreDone);
+})
+
+Array.from(choreIncomplete).forEach((item)=>{
+    item.addEventListener('click', choreNotDone)
 })
 
 async function deleteMovie() {
@@ -196,6 +211,60 @@ async function removeRest(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'restaurantIdFromMongo': restaurantId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function deleteChore() {
+    const choreId = this.parentNode.dataset.id;
+    try {
+        const response = await fetch('chores/deleteChore', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'choreIdFromMongo': choreId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function choreDone() {
+    const choreId = this.parentNode.dataset.id;
+    try {
+        const response = await fetch('chores/choreDone', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'choreIdFromMongo': choreId
+            })
+        })
+        const data = await response.json()
+        console.log(data);
+        location.reload();  
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function choreNotDone() {
+    const choreId = this.parentNode.dataset.id;
+    try {
+        const response = await fetch('chores/choreNotDone', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'choreIdFromMongo': choreId
             })
         })
         const data = await response.json()

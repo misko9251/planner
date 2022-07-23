@@ -154,6 +154,13 @@ ul{
     padding-top: 5%;
 }
 
+.rightContainerListChores{
+    width: 70%;
+    background-color: rgba(231, 157, 60, 0.85);
+    padding: 0 20px;
+    padding-top: 5%;
+}
+
 .rightContainerList > h1{
     font-family: 'Edu TAS Beginner', cursive;
     font-size: 40px;
@@ -172,8 +179,15 @@ ul{
     color: white;
 }
 
+.rightContainerListChores > h1{
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 40px;
+    color: white;
+}
+
 .listedThingsToDo{
     background-color: white;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 3% 0;
     display: flex;
@@ -187,7 +201,7 @@ ul{
     align-self: flex-start;
 }
 
-.deleteMovie, .deleteGrocery, .deleteRestaurant{
+.deleteMovie, .deleteGrocery, .deleteRestaurant, .deleteChore{
     color: rgb(190, 81, 81);
     cursor: pointer;
     display: block;
@@ -235,4 +249,18 @@ ul{
     display: block;
     align-self: center;
     color: rgba(88, 182, 96, 0.85);
+}
+
+.completeCircle4{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(224, 136, 19, 0.85);
+}
+
+.checkedCompleteCircle4{
+    cursor: pointer;
+    display: block;
+    align-self: center;
+    color: rgba(224, 136, 19, 0.85);
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Lists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c3a68ff822.js" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href = "css/style.css">
+</head>
+<body>
+    <section class="listPageContainer">
+        <nav>
+            <h2>Stay Structured</h2>
+            <ul>
+                <a href="/planner"><li>Movies to Watch</li></a>
+                <a href="/groceries"><li>Groceries</li></a>
+                <a href="/restaurant"><li>Places to Eat</li></a>
+                <a href="/chores"><li>Chores</li></a>
+            </ul>
+        </nav>
+        <section class="rightContainerListChores">
+            <h1>Chores</h1>
+            <form action="/chores/insertChore" method='POST'>
+                <input type="text" placeholder="Enter Chore" name='chore'>
+                <input type="submit">
+            </form>
+            <% choresObj.forEach( item => { %>
+                <section class="listedThingsToDo" data-id="<%=item._id%>">
+                    <i class='<%= item.completed === false ? 'completeCircle4 fa-solid fa-circle' : 'checkedCompleteCircle4 fa-solid fa-circle-dot'%>'></i><h3><%= item.chore %></h3><i class="deleteChore fa-solid fa-circle-minus"></i>
+                </section>
+            <% }) %> 
+        </section>   
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
